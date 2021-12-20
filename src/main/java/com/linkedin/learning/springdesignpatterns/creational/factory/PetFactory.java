@@ -1,4 +1,4 @@
-package com.linkedin.learning.springdesignpatterns.creational.factory.factory;
+package com.linkedin.learning.springdesignpatterns.creational.factory;
 
 import org.springframework.stereotype.Component;
 

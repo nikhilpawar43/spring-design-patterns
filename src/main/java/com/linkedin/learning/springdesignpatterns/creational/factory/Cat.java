@@ -1,4 +1,4 @@
-package com.linkedin.learning.springdesignpatterns.creational.factory.factory;
+package com.linkedin.learning.springdesignpatterns.creational.factory;
 
 public class Cat implements Pet {
 
