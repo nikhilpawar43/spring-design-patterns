@@ -1,5 +1,7 @@
 package com.linkedin.learning.springdesignpatterns;
 
+import com.linkedin.learning.springdesignpatterns.creational.prototype.ProtoFalse;
+import com.linkedin.learning.springdesignpatterns.creational.prototype.ProtoTrue;
 import com.linkedin.learning.springdesignpatterns.creational.singleton.SingA;
 import com.linkedin.learning.springdesignpatterns.creational.singleton.SingB;
 
@@ -16,6 +18,24 @@ class SpringDesignPatternsApplicationTests {
 
 	@Autowired
 	private SingB singB2;
+	
+	@Autowired
+	private ProtoFalse protoFalse1;
+
+	@Autowired
+	private ProtoFalse protoFalse2;
+
+	@Autowired
+	private ProtoTrue protoTrue1;
+
+	@Autowired
+	private ProtoTrue protoTrue2;
+	
+	@Test
+	public void testPrototypes() {
+		Assertions.assertSame(protoFalse1, protoFalse2);
+		Assertions.assertNotSame(protoTrue1, protoTrue2);
+	}
 
 	@Test
 	public void testSingleton() {
