@@ -4,6 +4,7 @@ import com.linkedin.learning.springdesignpatterns.creational.prototype.ProtoFals
 import com.linkedin.learning.springdesignpatterns.creational.prototype.ProtoTrue;
 import com.linkedin.learning.springdesignpatterns.creational.singleton.SingA;
 import com.linkedin.learning.springdesignpatterns.creational.singleton.SingB;
+import com.linkedin.learning.springdesignpatterns.operational.repository.PresidentRepository;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,9 @@ class SpringDesignPatternsApplicationTests {
 	@Autowired
 	private ProtoTrue protoTrue2;
 	
+	@Autowired
+	private PresidentRepository presidentRepository;
+	
 	@Test
 	public void testPrototypes() {
 		Assertions.assertSame(protoFalse1, protoFalse2);
@@ -47,6 +51,12 @@ class SpringDesignPatternsApplicationTests {
 
 		Assertions.assertNotNull(singA1, "The manually created single instance is null");
 		Assertions.assertSame(singA1, singA2);
+	}
+	
+	@Test
+	public void testRepository() {
+		System.out.println(presidentRepository.findById(1L));
+		System.out.println(presidentRepository.findById(4L));
 	}
 
 }
